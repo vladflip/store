@@ -15,3 +15,13 @@ class DatabaseSeeder extends Seeder {
 	}
 
 }
+
+class CategorySeeder extends Seeder {
+
+	public function run(){
+		new Category([
+				'name' => 'top',
+				'lft' => 
+			])
+	}
+}
