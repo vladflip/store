@@ -7,7 +7,9 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-debugbar": "1.8.*",
-		"phpunit/phpunit": "4.4.*"
+		"phpunit/phpunit": "4.4.*",
+		"baum/baum": "~1.0",
+		"fzaninotto/faker": "1.5.*@dev"
 	},
 	"autoload": {
 		"classmap": [

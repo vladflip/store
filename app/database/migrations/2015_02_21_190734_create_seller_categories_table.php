@@ -3,26 +3,17 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration {
+class CreateSellerCategoriesTable extends Migration {
 
-	const TABLE_NAME = 'items';
+	const TABLE_NAME = 'seller_categories';
 
 	public function up()
 	{
 		Schema::create(self::TABLE_NAME, function($t){
-			$t->increments('id');
-
-			$t->integer('price')->unsigned();
-			$t->integer('firm_id')->unsigned();				// todo
 			$t->integer('seller_id')->unsigned();
-			$t->text('description')->nullable();
-			$t->integer('category_id')->unsigned();					// done
-			$t->integer('delivery_id')->unsigned();					// todo
-			$t->string('main_pic', 255)->nullable();
-			$t->integer('views')->nullable();
-			$t->integer('rate')->nullable();
-			$t->integer('length')->nullable();
-			$t->boolean('sex')->nullable();
+			$t->integer('category_id')->unsigned();
+
+			$t->primary(array('seller_id', 'category_id'));
 
 			// seller foreign
 			$t->foreign('seller_id')->references('id')->on('sellers')

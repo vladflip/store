@@ -2,7 +2,20 @@
 
 class Item extends Eloquent{
 
-	protected $fillable = ['price', 'description'];
+	protected $fillable = [
+	// DELETE IN PRODUCTION
+		'seller_id',
+		'category_id',
+	// DELETE IN PRODUCTION
+		
+		'price', 
+		'description',
+		'main_pic',
+		'views',
+		'rate',
+		'length',
+		'sex'
+	];
 
 	public $timestamps = false;
 

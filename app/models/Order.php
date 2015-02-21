@@ -4,6 +4,9 @@ class Order extends Eloquent{
 
 	public $timestamps = false;
 
+	// DELETE IN PRODUCTION
+	protected $fillable = ['seller_id', 'user_id'];
+
 	public function customer(){
 		return $this->belongsTo('User', 'user_id');
 	}

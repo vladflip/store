@@ -34,6 +34,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		// - по айди товара взять айди продавца (DB а не елоквент) - 
 		// - 
 		$order = new Order;
-
+		
 	}
 }

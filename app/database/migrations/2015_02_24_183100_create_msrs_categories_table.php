@@ -3,25 +3,25 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderItemsTable extends Migration {
+class CreateMsrsCategoriesTable extends Migration {
 
-	const TABLE_NAME = 'order_items';
+	const TABLE_NAME = 'msrs_categories';
 
 	public function up()
 	{
 		Schema::create(self::TABLE_NAME, function($t){
-			$t->integer('item_id')->unsigned();
-			$t->integer('order_id')->unsigned();
+			$t->integer('msr_id')->unsigned();
+			$t->integer('category_id')->unsigned();
 
-			$t->primary(array('item_id', 'order_id'));
+			$t->primary(array('msr_id', 'category_id'));
 
-			// item foreign
-			$t->foreign('item_id')->references('id')->on('items')
+			// seller foreign
+			$t->foreign('msr_id')->references('id')->on('msrs')
 											->onDelete('cascade')
 											->onUpdate('no action');
 
-			// order foreign
-			$t->foreign('order_id')->references('id')->on('orders')
+			// category foreign
+			$t->foreign('category_id')->references('id')->on('categories')
 											->onDelete('cascade')
 											->onUpdate('no action');
 		});

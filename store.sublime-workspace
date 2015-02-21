@@ -7,96 +7,17 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/tests/OrderTest.php",
-			"settings":
-			{
-				"buffer_size": 576,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Seller.php",
-			"settings":
-			{
-				"buffer_size": 320,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Item.php",
-			"settings":
-			{
-				"buffer_size": 286,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Order.php",
-			"settings":
-			{
-				"buffer_size": 337,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/models/Category.php",
-			"settings":
-			{
-				"buffer_size": 593,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "<?php\n\nuse Illuminate\\Auth\\UserTrait;\nuse Illuminate\\Auth\\UserInterface;\nuse Illuminate\\Auth\\Reminders\\RemindableTrait;\nuse Illuminate\\Auth\\Reminders\\RemindableInterface;\n\nclass User extends Eloquent implements UserInterface, RemindableInterface {\n\n	use UserTrait, RemindableTrait;\n\n	protected $table = 'users';\n\n	protected $hidden = array('password', 'remember_token');\n\n	protected $fillable = ['login', 'token'];\n\n	public $timestamps = false;\n\n	public function seller(){\n		return $this->hasOne('Seller');\n	}\n\n	public function orders(){\n		return $this->hasMany('Order');\n	}\n\n	public static function notSeller(){\n		return static::has('seller', '<', 1);\n	}\n\n	public function makeSimpleOrder($item){\n		// нужно сделать простые запросы\n		// - по айди товара взять айди продавца (DB а не елоквент) - \n		// - \n		$order = new Order;\n		\n	}\n}\n",
-			"file": "app/models/User.php",
-			"file_size": 899,
-			"file_write_time": 130676487777104681,
-			"settings":
-			{
-				"buffer_size": 835,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 1256,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/database/migrations/2015_01_29_205006_create_items_table.php",
-			"settings":
-			{
-				"buffer_size": 894,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/database/migrations/2015_02_05_224347_create_categories_table.php",
-			"settings":
-			{
-				"buffer_size": 440,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/database/seeds/DatabaseSeeder.php",
-			"settings":
-			{
-				"buffer_size": 325,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 81.0,
+		"height": 150.0,
 		"selected_items":
 		[
+			[
+				"set js",
+				"Set Syntax: JavaScript"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
@@ -108,10 +29,6 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"set js",
-				"Set Syntax: JavaScript"
 			],
 			[
 				"set blad",
@@ -135,26 +52,54 @@
 	},
 	"file_history":
 	[
-		"/C/wamp/www/store/composer.json",
-		"/C/wamp/www/store/app/config/app.php",
-		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
-		"/C/wamp/www/store/app/database/migrations/2015_01_30_151829_create_orders_table.php",
+		"/C/wamp/www/store/app/routes.php",
+		"/C/wamp/www/store/app/models/Measure.php",
+		"/C/wamp/www/store/app/database/seeds/DatabaseSeeder.php",
+		"/C/wamp/www/store/app/models/Order.php",
+		"/C/wamp/www/store/app/models/Categories.php",
+		"/C/wamp/www/store/app/models/Seller.php",
+		"/C/wamp/www/store/app/models/Item.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_21_190734_create_seller_categories_table.php",
 		"/C/wamp/www/store/app/database/migrations/2015_01_29_205006_create_items_table.php",
+		"/C/wamp/www/store/app/models/User.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_24_183556_create_items_msrs_table.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_24_183100_create_msrs_categories_table.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_24_182457_create_msrs_table.php",
+		"/C/wamp/www/store/app/models/Category.php",
+		"/C/wamp/www/store/app/database/migrations/2015_01_29_135509_create_users_table.php",
+		"/C/wamp/www/store/app/database/migrations/2015_01_21_112405_create_categories_table.php",
+		"/C/wamp/www/store/app/config/oauth.php",
+		"/C/wamp/www/store/app/libs/oauth/OAuth.php",
+		"/C/wamp/www/store/app/libs/oauth/Provider/Vk.php",
+		"/C/wamp/www/store/app/libs/oauth/Provider.php",
+		"/C/wamp/www/store/app/controllers/OAuthController.php",
+		"/C/wamp/www/store/vendor/baum/baum/LICENSE",
+		"/C/wamp/www/store/app/config/auth.php",
+		"/C/wamp/www/store/composer.json",
+		"/C/wamp/www/store/app/config/.gitignore",
+		"/C/wamp/www/store/app/libs/OAuth.php",
+		"/C/wamp/www/store/app/database/migrations/2015_01_30_152240_create_order_items_table.php",
+		"/C/wamp/www/store/app/database/migrations/2015_01_30_151829_create_orders_table.php",
+		"/C/wamp/www/store/vendor/laravel/framework/src/Illuminate/Workbench/stubs/gitignore.txt",
+		"/C/wamp/www/store/.gitignore",
+		"/C/wamp/www/store/app/database/migrations/2015_02_21_112405_create_categories_table.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_21_190503_create_seller_settings_table.php",
+		"/C/wamp/www/store/app/tests/OrderTest.php",
+		"/C/wamp/www/store/app/config/app.php",
+		"/C/wamp/www/store/app/database/migrations/2015_02_05_224347_create_categories_table.php",
+		"/C/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
 		"/C/wamp/www/blogs/app/models/Post.php",
 		"/C/wamp/www/blogs/app/models/Comment.php",
 		"/C/wamp/www/blogs/app/models/User.php",
-		"/C/wamp/www/store/app/database/migrations/2015_01_30_152240_create_order_items_table.php",
 		"/C/wamp/www/blogs/app/models/Message.php",
 		"/C/wamp/www/store/app/tests/ExampleTest.php",
 		"/C/wamp/www/store/app/tests/UserTest.php",
-		"/C/wamp/www/store/app/routes.php",
 		"/D/casper/index.html",
 		"/D/casper/style.css",
 		"/D/casper/js/timeline.js",
 		"/D/casper/js/main.js",
 		"/C/wamp/www/gitgit/fuck.js",
 		"/C/wamp/www/gitgit/index.html",
-		"/C/wamp/www/store/app/database/migrations/2015_01_29_135509_create_users_table.php",
 		"/C/wamp/www/store/app/database/migrations/2015_01_29_151527_create_sellers_table.php",
 		"/C/wamp/www/electroshark/wp-content/themes/electroshark/casper/index.html",
 		"/C/wamp/www/electroshark/wp-content/themes/electroshark/casper/timeline.js",
@@ -179,7 +124,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 		]
@@ -189,6 +134,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'msrs'",
+			"json_encode(",
+			"'oauth.'. $this->name .",
 			"pin",
 			"onmouseup",
 			"$('.item_catalog')",
@@ -215,278 +163,8 @@
 	"groups":
 	[
 		{
-			"selected": 4,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/tests/OrderTest.php",
-					"settings":
-					{
-						"buffer_size": 576,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								521,
-								521
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/Seller.php",
-					"settings":
-					{
-						"buffer_size": 320,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								314,
-								314
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/Item.php",
-					"settings":
-					{
-						"buffer_size": 286,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								280,
-								280
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/Order.php",
-					"settings":
-					{
-						"buffer_size": 337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								36,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/models/Category.php",
-					"settings":
-					{
-						"buffer_size": 593,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								328,
-								328
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/models/User.php",
-					"settings":
-					{
-						"buffer_size": 835,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								826,
-								826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/routes.php",
-					"settings":
-					{
-						"buffer_size": 1256,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1251,
-								1251
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/database/migrations/2015_01_29_205006_create_items_table.php",
-					"settings":
-					{
-						"buffer_size": 894,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								243,
-								197
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/database/migrations/2015_02_05_224347_create_categories_table.php",
-					"settings":
-					{
-						"buffer_size": 440,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								176,
-								176
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/database/seeds/DatabaseSeeder.php",
-					"settings":
-					{
-						"buffer_size": 325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								236,
-								236
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -496,7 +174,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -532,24 +210,128 @@
 		"selected_items":
 		[
 			[
-				"createcatego",
-				"app/database/migrations/2015_02_05_224347_create_categories_table.php"
+				"seller_cate",
+				"app/database/migrations/2015_02_21_190734_create_seller_categories_table.php"
 			],
 			[
-				"createitems",
+				"seller",
+				"app/models/Seller.php"
+			],
+			[
+				"item.php",
+				"app/models/Item.php"
+			],
+			[
+				"items",
 				"app/database/migrations/2015_01_29_205006_create_items_table.php"
 			],
 			[
-				"app.php",
-				"app/config/app.php"
+				"categori",
+				"app/models/Categories.php"
+			],
+			[
+				"user.php",
+				"app/models/User.php"
+			],
+			[
+				"items_msrs",
+				"app/database/migrations/2015_02_24_183556_create_items_msrs_table.php"
+			],
+			[
+				"create_sellers",
+				"app/database/migrations/2015_02_21_190734_create_seller_categories_table.php"
+			],
+			[
+				"create_msrs",
+				"app/database/migrations/2015_02_24_183100_create_msrs_categories_table.php"
+			],
+			[
+				"createusers",
+				"app/database/migrations/2015_01_29_135509_create_users_table.php"
+			],
+			[
+				"createmsrs",
+				"app/database/migrations/2015_02_24_182457_create_msrs_table.php"
+			],
+			[
+				"routes",
+				"app/routes.php"
+			],
+			[
+				"categoriestabl",
+				"app/database/migrations/2015_01_21_112405_create_categories_table.php"
+			],
+			[
+				"category.php",
+				"app/models/Category.php"
+			],
+			[
+				"seeder",
+				"app/database/seeds/DatabaseSeeder.php"
+			],
+			[
+				"oaut.",
+				"app/config/oauth.php"
+			],
+			[
+				"oauth",
+				"app/config/oauth.php"
 			],
 			[
 				"composer",
 				"composer.json"
 			],
 			[
-				"routes",
+				"gitigno",
+				".gitignore"
+			],
+			[
+				"gitig",
+				"vendor/laravel/framework/src/Illuminate/Workbench/stubs/gitignore.txt"
+			],
+			[
+				"order.ph",
+				"app/models/Order.php"
+			],
+			[
+				"order",
+				"app/database/migrations/2015_01_30_152240_create_order_items_table.php"
+			],
+			[
+				"createorder",
+				"app/database/migrations/2015_01_30_151829_create_orders_table.php"
+			],
+			[
+				"createsellerca",
+				"app/database/migrations/2015_02_21_190734_create_seller_categories_table.php"
+			],
+			[
+				"createcategori",
+				"app/database/migrations/2015_02_21_112405_create_categories_table.php"
+			],
+			[
+				"createitems",
+				"app/database/migrations/2015_01_29_205006_create_items_table.php"
+			],
+			[
+				"categor",
+				"app/models/Category.php"
+			],
+			[
+				"route",
 				"app/routes.php"
+			],
+			[
+				"createcatego",
+				"app/database/migrations/2015_02_21_112405_create_categories_table.php"
+			],
+			[
+				"category",
+				"app/models/Category.php"
+			],
+			[
+				"app.php",
+				"app/config/app.php"
 			],
 			[
 				"order_ite",
@@ -562,18 +344,6 @@
 			[
 				"createorders",
 				"app/database/migrations/2015_01_30_151829_create_orders_table.php"
-			],
-			[
-				"items",
-				"app/database/migrations/2015_01_29_205006_create_items_table.php"
-			],
-			[
-				"route",
-				"app/routes.php"
-			],
-			[
-				"createusers",
-				"app/database/migrations/2015_01_29_135509_create_users_table.php"
 			],
 			[
 				"indexphp",
@@ -618,6 +388,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,
-	"side_bar_width": 306.0,
+	"side_bar_width": 174.0,
 	"status_bar_visible": true
 }
